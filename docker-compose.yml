@@ -1,0 +1,40 @@
+version: '3'
+
+networks:
+  laravel:
+
+services:
+  php:
+    platform: linux/x86_64
+    build:
+      context: .
+      dockerfile: php.dockerfile
+    container_name: php-visoft
+    ports:
+      - "80:80"
+    networks:
+      - laravel
+    env_file:
+      - ./env/.env
+    volumes:
+      - ./visoft/:/var/visoft/
+
+  mysql:
+      platform: linux/x86_64
+      image: mysql:8.0.24
+      container_name: mysql
+      restart: unless-stopped
+      tty: true
+      ports:
+        - "3306:3306"
+      environment:
+        MYSQL_DATABASE: homestead
+        MYSQL_USER: homestead
+        MYSQL_PASSWORD: secret
+        MYSQL_ROOT_PASSWORD: secret
+        SERVICE_TAGS: dev
+        SERVICE_NAME: mysql
+      networks:
+        - laravel
+      volumes:
+        - ./mysql:/var/lib/mysql
