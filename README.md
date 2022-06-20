@@ -13,3 +13,28 @@ Comandos de laravel
 - `docker-compose run --rm composer update`
 - `docker-compose run --rm npm run dev`
 - `docker-compose run --rm artisan migrate` 
+
+
+
+//variables a enviar linea de codigo (Blockchain) archivo index.php
+  $today = date("m-d-y_H-i-s") .''; //fecha y hora para el nombre de cada carpeta que guarda los archivos enviados a blockchain y el certificado.
+  $origin = 'inbox/'; //nombre de la carpeta donde se ponen los archivos
+  $destiny = 'outbox/'; //nombre de la carpeta donde va a guardar las carpetas con fecha y hora que guardan los archivos enviados a blockchain y el certificado.
+  
+  
+  //variables a enviar a ubicarme (Mensajes de texto) archivo clase sendSms.php
+    
+    //El mensaje de texto a enviar
+    string $messageSMS = "Hola prueba";
+     // un array con tres valores 
+    $configSms = [   
+                    'from'='', //número de teleéono quien lo envia
+                    'user'='', //usuario de acceso a ubicarme
+                    'pass'='' //contraseña de acceso a ubicarme
+                    ]
+    //número de teléfono a quien va dirigido    
+    $numberTo = '';
+    
+     llamar la clase y la funcion build
+     $resultSms = new SendSms();
+     $resultSms1 = $resultSms->build($messageSMS, $configSms);
