@@ -17,9 +17,13 @@ Comandos de laravel
 
 
 //variables a enviar linea de codigo (Blockchain) archivo index.php
-  $today = date("m-d-y_H-i-s") .''; //fecha y hora para el nombre de cada carpeta que guarda los archivos enviados a blockchain y el certificado.
-  $origin = 'inbox/'; //nombre de la carpeta donde se ponen los archivos
-  $destiny = 'outbox/'; //nombre de la carpeta donde va a guardar las carpetas con fecha y hora que guardan los archivos enviados a blockchain y el certificado.
+  //fecha y hora para el nombre de cada carpeta que guarda los archivos enviados a blockchain y el certificado.
+  $today = date("m-d-y_H-i-s") .'';
+  
+  //nombre de la carpeta donde se ponen los archivos
+  $origin = 'inbox/';
+  //nombre de la carpeta donde va a guardar las carpetas con fecha y hora que guardan los archivos enviados a blockchain.
+  $destiny = 'outbox/';
   
   
   //variables a enviar a ubicarme (Mensajes de texto) archivo clase sendSms.php
