@@ -15,20 +15,18 @@ Comandos de laravel
 - `docker-compose run --rm artisan migrate` 
 
 
-
-  //variables a enviar linea de codigo (Blockchain) archivo index.php
-  //fecha y hora para el nombre de cada carpeta que guarda los archivos enviados a blockchain y el certificado.
-  $today = date("m-d-y_H-i-s") .'';
-  
-  //nombre de la carpeta donde se ponen los archivos
-  $origin = 'inbox/';
-  
-  //nombre de la carpeta donde va a guardar las carpetas con fecha y hora que guardan los archivos enviados a blockchain.
-  $destiny = 'outbox/';
-  
- 
-  //variables a enviar a ubicarme (Mensajes de texto) archivo clase sendSms.php
+//variables a enviar linea de codigo (Blockchain) archivo index.php
+      
+     //fecha y hora para el nombre de cada carpeta que guarda los archivos enviados a blockchain y el certificado.
+      $today = date("m-d-y_H-i-s") .'';
+     //nombre de la carpeta donde se ponen los archivos
+      $origin = 'inbox/';
     
+    
+ //variables a enviar a ubicarme (Mensajes de texto) archivo clase sendSms.php
+
+    //nombre de la carpeta donde va a guardar las carpetas con fecha y hora que guardan los archivos enviados a blockchain.
+    $destiny = 'outbox/';
     //El mensaje de texto a enviar
     string $messageSMS = "Hola prueba";
      // un array con tres valores 
